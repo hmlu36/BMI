@@ -1,0 +1,22 @@
+{
+  "name": "bmi",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "install": "^0.13.0",
+    "npm": "^7.19.1",
+    "vee-validate": "^4.4.6",
+    "vue": "^3.0.5",
+    "vue-sweetalert2": "^5.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.4.2"
+  }
+}
