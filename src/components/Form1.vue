@@ -30,6 +30,7 @@
               type="text"
               v-model="registerForm.birthDate"
               class="datepicker"
+              rules="required"
             />
             <label for="birthDate">生日</label>
             <ErrorMessage name="birthDate" class="error" />
@@ -44,6 +45,7 @@
               type="text"
               v-model="registerForm.inputDate"
               class="datepicker"
+              rules="required"
             />
             <label for="inputDate">使用日期</label>
             <ErrorMessage name="inputDate" class="error" />
@@ -63,6 +65,7 @@
                     as="input"
                     type="text"
                     v-model="registerForm.moisture1"
+                    rules="required"
                   />
                   <label for="moisture1">水分</label>
                   <ErrorMessage name="moisture1" class="error" />
@@ -80,6 +83,7 @@
                     as="input"
                     type="text"
                     v-model="registerForm.elasticity1"
+                    rules="required"
                   />
                   <label for="elasticity1">彈性</label>
                   <ErrorMessage name="elasticity1" class="error" />
@@ -98,6 +102,7 @@
                     as="input"
                     type="text"
                     v-model="registerForm.moisture2"
+                    rules="required"
                   />
                   <label for="moisture2">水分</label>
                   <ErrorMessage name="moisture2" class="error" />
@@ -115,6 +120,7 @@
                     as="input"
                     type="text"
                     v-model="registerForm.elasticity2"
+                    rules="required"
                   />
                   <label for="elasticity2">彈性</label>
                   <ErrorMessage name="elasticity2" class="error" />
@@ -162,23 +168,18 @@ export default {
 
     const onSubmit = () => {
       console.log(JSON.stringify(registerForm));
-      /*
+      
       let data = {
         fields: {
-          姓名: registerForm.fullName,
-          連絡電話: registerForm.phoneNumber,
-          與新人關係: registerForm.relation,
-          是否願意參加婚禮: registerForm.attendWedding,
-          是否願意參加午宴: registerForm.attendWedding === '無法出席，祝你們幸福滿滿' ? '' : registerForm.attendEvent ? '是' : '否',
-          當天出席人數: registerForm.attendPeople,
-          是否需準備兒童座椅: registerForm.child,
-          是否需要安排素食餐點: registerForm.vegetarian === undefined ? '' : registerForm.vegetarian ? '是' : '否',
-          素食人數: registerForm.vegetarianNumber,
-          其他備註: registerForm.remark,
-          喜帖寄送方式: registerForm.inviteType,
-          地址: registerForm.inviteAddress,
-          電子郵件: registerForm.inviteEmailAddress,
-          想對我們說的話: registerForm.message,
+          姓名: registerForm.userName,
+          生日: registerForm.birthDate,
+          使用日期: registerForm.inputDate,
+          使用前水份: registerForm.moisture1,
+          使用前油份: registerForm.oil1,
+          使用前彈性: registerForm.elasticity1,
+          使用後水份: registerForm.moisture2,
+          使用後油份: registerForm.oil2,
+          使用後彈性: registerForm.elasticity2,
         },
       };
       //console.log(JSON.stringify(data));
@@ -197,7 +198,7 @@ export default {
             Swal.fire({
               icon: 'success',
               title: '儲存成功',
-              html: '感謝您的填寫<br/>若需要更改資料，再麻煩提前說哦！',
+              html: '感謝您的填寫!',
               willClose: () => {
                 window.location.reload();
               },
@@ -205,13 +206,14 @@ export default {
           }
         })
         .catch((error) => {
+          document.querySelector('.blockUI').setAttribute('style', 'display:none');
           Swal.fire({
             icon: 'error',
             title: '儲存失敗',
             text: '請洽管理員！',
           });
         });
-        */
+        
     };
 
     const initComponent = async () => {

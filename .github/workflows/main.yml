@@ -12,7 +12,7 @@ jobs:
       USER_EMAIL: hmlu36@gmail.com
       PUBLISH_DIR: ./dist
       VITE_APP_APIKEY: ${{secrets.VITE_APP_APIKEY}}
-      VITE_APP_APPID: ${{secrets.VITE_APP_ID}}
+      VITE_APP_APP_ID: ${{secrets.VITE_APP_ID}}
       VITE_APP_VITE_APP_KEY: ${{secrets.VITE_APP_KEY}}
     runs-on: ubuntu-latest
     strategy:
